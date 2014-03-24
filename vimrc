@@ -3,7 +3,8 @@ set bg=dark
 set ls=2
 set hlsearch
 set incsearch
-set ic
+set ignorecase
+set smartcase
 set nu
 set ruler
 set smarttab
