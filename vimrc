@@ -27,9 +27,21 @@ let c_space_errors=1
 let c_no_ansi=1
 filetype off
 
+
+let vundle_exists=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle..."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle
+    let vundle_exists=0
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
@@ -38,6 +50,12 @@ Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'honza/vim-snippets'
+
+if vundle_exists == 0
+    echo "Installing vundle plugins"
+    echo ""
+    execute 'PluginInstall'
+endif
 
 filetype plugin indent on
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp

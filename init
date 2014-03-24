@@ -2,8 +2,4 @@
 
 (cd $(dirname "$0") &&
     ln -s --backup $PWD/vimrc "$HOME/.vimrc" &&
-    ln -s --backup $PWD/gvimrc "$HOME/.gvimrc" &&
-    git submodule init &&
-    git submodule update)
-
-vim +PluginInstall +qall
+    ln -s --backup $PWD/gvimrc "$HOME/.gvimrc")
