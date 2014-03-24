@@ -81,6 +81,7 @@ au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 au VimResized * exe "normal! \<c-w>="
 
+let g:ctrlp_match_window = 'bottom,order:ttb,min:5,max:30'
 let g:ctrlp_user_command = {
     \ 'types': {
         \ 1: ['rfs_doxy.cfg', 'cd %s && git ls-files -co --exclude-standard -- src buildtools/version.yaml'],
