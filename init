@@ -2,4 +2,6 @@
 
 (cd $(dirname "$0") &&
     ln -s --backup $PWD/vimrc "$HOME/.vimrc" &&
-    ln -s --backup $PWD/gvimrc "$HOME/.gvimrc")
+    ln -s --backup $PWD/gvimrc "$HOME/.gvimrc" &&
+    git config user.name "Matt McShane" &&
+    git config user.email "matt@mattmcshane.com")
