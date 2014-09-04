@@ -51,11 +51,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'honza/vim-snippets'
 
-if vundle_exists == 0
-    echo "Installing vundle plugins"
-    echo ""
-    execute 'PluginInstall'
-endif
 
 filetype plugin indent on
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -102,9 +97,8 @@ au VimResized * exe "normal! \<c-w>="
 let g:ctrlp_match_window = 'bottom,order:ttb,min:5,max:30'
 let g:ctrlp_user_command = {
     \ 'types': {
-        \ 1: ['rfs_doxy.cfg', 'cd %s && git ls-files -co --exclude-standard -- src buildtools/version.yaml'],
-        \ 2: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
-        \ 3: ['.hg', 'hg --cwd %s locate -I .'],
+        \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
         \ },
     \ 'fallback': 'find %s -type f'
     \ }
@@ -114,3 +108,8 @@ if(filereadable(expand("~/.vimrc.local")))
     source ~/.vimrc.local
 endif
     
+if vundle_exists == 0
+    echo "Installing vundle plugins"
+    echo ""
+    execute 'PluginInstall'
+endif
