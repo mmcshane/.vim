@@ -2,3 +2,4 @@ bundle/**
 view/**
 ~bundle/vundle
 UltiSnips/cpp.snippets
+.netrwhist
